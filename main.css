@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", sans-serif;
+}
+body {
+  background-color: var(--Very-light-grayish-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--Light-grayish-cyan);
+}
+header img {
+  width: 60px;
+}
+main {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 800px;
+}
+
+.bill-section {
+  flex: 1;
+  padding: 20px 30px;
+}
+.bill-section .bill label,
+.bill-section .people label {
+  display: block;
+  position: relative;
+  font-size: 14px;
+}
+.bill-section .people label {
+  display: flex;
+  justify-content: space-between;
+}
+.bill-section .people label span {
+  display: none;
+}
+.bill-section .people label span.error {
+  display: block;
+  color: hsla(0, 100%, 50%, 0.8);
+  font-size: 12px;
+}
+.bill-section .bill input,
+.bill-section .people input {
+  padding: 12px 24px;
+  width: -webkit-fill-available;
+  direction: rtl;
+  margin-top: 10px;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  border-radius: 5px;
+  color: var(--Very-dark-cyan);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  caret-color: var(--Strong-cyan);
+}
+.bill-section .bill input::placeholder,
+.bill-section .people input::placeholder {
+  color: var(--Very-dark-cyan);
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+.bill-section .bill input:focus,
+.bill-section .people input:focus,
+.bill-section .tip .tip-buttons input:focus {
+  outline-color: var(--Strong-cyan);
+}
+.bill-section .people input.error:focus {
+  outline-color: hsla(0, 100%, 50%, 0.5);
+}
+.bill-section .bill label::before {
+  content: url(images/icon-dollar.svg);
+}
+.bill-section .people label::before {
+  content: url(images/icon-person.svg);
+}
+.bill-section .bill label::before,
+.bill-section .people label::before {
+  position: absolute;
+  left: 10px;
+  top: 46px;
+  color: var(--Grayish-cyan);
+}
+/* Hiddin Arrow */
+.bill-section .bill input::-webkit-inner-spin-button,
+.bill-section .people input::-webkit-inner-spin-button,
+.bill-section .tip .tip-buttons input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.bill-section .tip {
+  margin: 20px 0;
+}
+.bill-section .tip label {
+  display: block;
+  font-size: 14px;
+}
+.bill-section .tip .tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  place-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+.bill-section .tip .tip-buttons button {
+  background-color: var(--Very-dark-cyan);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  padding: 8px 18px;
+}
+.bill-section .tip .tip-buttons input {
+  padding: 0 8px;
+  width: -webkit-fill-available;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  text-align: center;
+  border-radius: 5px;
+  color: var(--Very-dark-cyan);
+  font-weight: 700;
+  font-size: 20px;
+  direction: rtl;
+  caret-color: var(--Strong-cyan);
+  cursor: pointer;
+}
+.bill-section .tip .tip-buttons button:hover {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+.bill-section .tip .tip-buttons button.active {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+.results-section {
+  flex: 1;
+  background-color: var(--Very-dark-cyan);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+.results-section p {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+.results-section span {
+  color: var(--Grayish-cyan);
+  display: block;
+  font-size: 12px;
+}
+.results-section .tip-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 40px;
+}
+
+.results-section .total-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 100px;
+}
+
+.results-section p.dollar {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--Strong-cyan);
+}
+
+.results-section button {
+  background-color: var(--Strong-cyan);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--Very-dark-cyan);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  width: 100%;
+  opacity: 0.2;
+}
+.results-section button.show {
+  opacity: 1;
+}
+.results-section button:hover {
+  opacity: 1;
+  background-color: var(--Light-grayish-cyan);
+}
+@media (width<=450px) {
+  body {
+    margin: 80px 0 0;
+  }
+  header img {
+    width: 70px;
+  }
+  main {
+    flex-direction: column;
+    width: auto;
+    padding: 0;
+  }
+
+  .bill-section .tip .tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 5px));
+  }
+}
